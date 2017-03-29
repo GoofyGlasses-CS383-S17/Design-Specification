@@ -3,6 +3,7 @@
 \usepackage{float}
 \usepackage{lipsum}
 \usepackage{parskip}
+\usepackage{bbding}
 \usepackage{amssymb}
 \usepackage{titlesec} 
 \usepackage{graphicx}
@@ -119,6 +120,12 @@
   		\includegraphics[width=\linewidth]{SingleNodeEditorDiagram.JPG}
   		\caption{Use Case Diagram of Single Node Editor \label{overflow}}
   	\end{figure}
+  
+	\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{node_frame_prototype}
+    \caption{Diagram for Frame, Node, and Color classes}
+  \end{figure}
 	
 	%----------------------------------------------------------------------------------------
 	%	MULTI NODE EDITOR
@@ -170,6 +177,7 @@
   	When the user selects one or multiple nodes and chooses to edit their properties, the Multi-Node Editor is responsible to call up the Node Editor. The Node Editor will then change the data representation of the edited node(s) which will then be reflected in the GUI as displayed by the Multi-Node Editor.  	
   	Alternatively, the user can use the Animation Creator to generate grids which can then be edited with the Grid Editor, Multi-Node Editor, or Node Editor. The Animation Editor uses characters available through the Character Editor.  	
   	See the use case diagram below.	
+    
   	\begin{figure}[ht!]
   		\centering
   		\includegraphics[width=0.9\linewidth]{Relationship_Use.png}
@@ -199,20 +207,21 @@
 	{ \setstretch{2.0}		
   	\scalebox{1}{  		
   		\begin{tabular}{r |@{\tline} l}  			
-  			March 6  & Design Specifications Version 1\\			
-  			March 21 & Begin Version 1 of GoofyLights\\
-  			March 23 & Unit Testing of Version 1\\
-  			March 28 & Develop Single Node Editor\\
-  			March 30 & Unit Testing Single Node Editor\\
-  			April 4  & Develop Multi-Node Editor\\
-  			April 6  & Unit Testing Multi-Node Editor\\
-  			April 11 & Develop Grid Editor\\
-  			April 13 & Unit Testing Grid Editor\\
-  			April 18 & Extra time to catch up or add additional features\\
-  			April 20 & Goal Specifications for System Testing\\
-  			April 25 & System Testing\\
-  			May 1    & Preparation for Final Presentation\\
-  			May 4    & GoofyLights Final Presentation\\  			
+  			March 6  & Design Specifications Version 1     \Checkmark              \\			
+  			March 21 & Begin Sprint 1 of GoofyLights       \Checkmark              \\
+        March 23 & Develop GUI for Single Node Editor  \Checkmark              \\
+        March 25 & File I/O for Single Node            \Checkmark              \\
+  			March 27 & Unit Testing of Sprint 1            \Checkmark              \\
+  			April 4  & Develop Multi-Node Editor                         \\
+  			April 6  & Unit Testing Multi-Node Editor                    \\
+  			April 11 & Develop Grid Editor                               \\
+  			April 13 & Unit Testing Grid Editor                          \\
+        April 16 & Convert Editors to use color                      \\
+  			April 18 & Extra time to catch up or add additional features \\
+  			April 20 & Goal Specifications for System Testing            \\
+  			April 25 & System Testing                                    \\
+  			May 1    & Preparation for Final Presentation                \\
+  			May 4    & GoofyLights Final Presentation                    \\  			
   		\end{tabular}  		
   		}  	
 	}
