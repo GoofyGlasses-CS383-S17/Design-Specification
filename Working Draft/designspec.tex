@@ -170,7 +170,7 @@
 	%	Frame Preview Bar
 	%----------------------------------------------------------------------------------------
 	\subsubsection {Frame Preview Bar (Scrub Bar)}
-	The Frame Preview Bar is responsible for the viewing and selection of frames (saved grid formations). The Frame Preview Bar provides a simple interface that provides the user a simple "preview" of the current list of frames. By default the frame preview bar is blank until the user edits a node. When loading in a TAN file, the frame preview bar will be generated with the list of frames that was read from the file. The Frame Preview Bar also works alongside "Add Frame (+)" button, which will take the current configuration of the grid, and add that frame to the end of the current frame list. Frame Preview Bar will then update its preview to correspond to this change. The only inputs available are clicking upon the frame preview for the corresponding frame, which then will have the GUI load the frame's configuration into the grid editor. The other input is clicking and dragging the scroll bar (provided there is more frames than that can fit on the frame preview) to move through the list of frames. This preview bar has some system resource demands, as the actions described are resource intensive, such as having the frame preview bar generate a preview for each frame. An example of the Frame Preview Bar is shown in the following diagram below.
+	The Frame Preview Bar is responsible for the viewing and selection of frames (saved grid formations). It provides an interface that shows the user a simple "preview" of the current list of frames. By default the frame preview bar is blank until the user edits a node. Upon loading a TAN file, the frame preview bar will generate a list of frames that was read in. The Frame Preview Bar also works alongside "Add Frame (+)" button, which will take the current configuration of the grid and append that frame to the current frame list. The Frame Preview Bar will then update its graphic to reflect this change. The only inputs available are clicking upon the frame preview for the corresponding frame, which then will have the GUI load the frame's configuration into the grid editor. The other input is clicking and dragging the scroll bar (provided there is more frames than that can fit on the frame preview) to move through the list of frames. This preview bar has some system resource demands, as the actions described are resource intensive, such as having the frame preview bar generate a preview for each frame. An example of the Frame Preview Bar is shown in the following diagram.
 	
 	\begin{figure}[ht!]
 		\centering
@@ -213,7 +213,8 @@
     When planning this project, several decisions were made to limit the scope and complexity of the final product. These decisions are detailed below. 
     
   	\subsection{TAN File}
-	  	The user is able to save and load TAN files, via the GUI interface. THe TAN file acts similarly to a text file, and consists of an initial first line stating the program version number, and then the next line specifies an audiofile (or states noAudioFile). The third line states the value in RGB for current state of color wheel. The fourth line lists the sixteen recently used RGB colors. The fifth line specifies the number of grids, then the next two values are the dimensions of the grid. Then starting with the sixth line, the TAN file begins the frames, with the first line of the "frame" stating the time (in milliseconds) the frame will appear. Then all the remaining lines represent each row, thus if the grid size was 3x3, there would three additional lines. Each line then has 3 * (the number of columns) of values, allowing for each node/cell having a RGB value corresponding to it. Going back the 3x3 example, having 3 * 3 (rows) = 9 values for each line, where 3 of those values are the RGB for one cell/node. Saving the current configuration of the frames from the GUI will convert the information into TAN file format, so the user can save and load files as often as needed. As mentioned before, TAN files can then be loaded, and then the GUI will load the information to display the new grid, showing the first frame and changing the grid dimensions as specified by the file.
+	  	The user is able to save and load TAN files via the GUI interface. A TAN file is a text file with the following format.
+      The first line indicates the program version number. The next line specifies the name of an audio file(or states noAudioFile) which is to be loaded by the TAN player. The third line states the value in RGB for current state of color wheel. The fourth line lists the sixteen recently used RGB colors. The fifth line specifies the number of grids, then the next two values are the dimensions of the grid. Then starting with the sixth line, the TAN file begins the frames, with the first line of the "frame" stating the time (in milliseconds) the frame will appear. Then all the remaining lines represent each row, thus if the grid size was 3x3, there would three additional lines. Each line then has 3 * (the number of columns) of values, allowing for each node/cell having a RGB value corresponding to it. Going back the 3x3 example, having 3 * 3 (rows) = 9 values for each line, where 3 of those values are the RGB for one cell/node. Saving the current configuration of the frames from the GUI will convert the information into TAN file format, so the user can save and load files as often as needed. As mentioned before, TAN files can then be loaded, and then the GUI will load the information to display the new grid, changing the grid dimensions as specified by the file, and displaying the first frame.
   	
   	\subsection{Language Decisions}
     	Java is the primary tool used in this project. It is convenient as it works easily across platforms, is very readable, and provides its own graphics package. Swing is a graphics package designed to make APIs that work and look the same across all Java platforms. It is built into the language so no external libraries are needed. The use of Qt integration for Java, Qt Jambi, was considered but ultimately dismissed as that this would add complexity without providing functionality. 
@@ -237,13 +238,13 @@
   			March 21 & Begin Sprint 1 of GoofyLights       \Checkmark              \\
         March 23 & Develop GUI for Single Node Editor  \Checkmark              \\
         March 25 & File I/O for Single Node            \Checkmark              \\
-  			March 27 & Unit Testing for Sprint 1            \Checkmark              \\
-        March 30 & End Sprint 1 and Begin Sprint 2                       \Checkmark              \\
-  			April 4  & File I/0 for GUI       \Checkmark                  \\
-  			April 6  & Begin Development of Frame Editor \Checkmark             \\
-  			April 11 & End Sprint 2 and begin Sprint 3          \Checkmark                    \\
-  			April 13 & Complete Frame Editor                         \\
-        April 16 & Complete Multi Node Editor                   \\
+  			March 27 & Unit Testing for Sprint 1           \Checkmark              \\
+        March 30 & End Sprint 1 and Begin Sprint 2     \Checkmark              \\
+  			April 4  & File I/0 for GUI                    \Checkmark              \\
+  			April 6  & Begin Development of Frame Editor   \Checkmark              \\
+  			April 11 & End Sprint 2 and begin Sprint 3     \Checkmark              \\
+  			April 13 & Complete Frame Editor                             \\
+        April 16 & Complete Multi Node Editor                        \\
   			April 18 & Extra time to catch up or add additional features \\
   			April 20 & Goal Specifications for System Testing            \\
   			April 25 & System Testing                                    \\
