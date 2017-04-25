@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{setspace}
+\usepackage[normalem]{ulem}
 \usepackage[section]{placeins}
 \newcommand{\tline}{\hspace{-2.3pt}$\bullet$ \hspace{5pt}}
 \hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
@@ -127,42 +128,51 @@
     \caption{Diagram for Frame, Node, FrameButtonActionListener, and NodeActionListener Classes}
   \end{figure}
 	
-	%----------------------------------------------------------------------------------------
-	%	MULTI NODE EDITOR
-	%----------------------------------------------------------------------------------------
-	\subsubsection {Multi-Node Editor}
-  	The Multi-Node Editor component is in charge of editing all the nodes within a grid. This component handles the selection of individual or multiple nodes. For example, the user may want to select a 20x20 sub-grid and change the color to green. The Multi-Node Editor is responsible for allowing the user to select up to 400 nodes. 
-    This selection should be done in a way that is familiar to the user. One possible action-sequence starts with the user selecting a node in a corner of the sub-grid. Then, while holding down shift, the user would select the node in a corner of the sub-grid diagonal to the first node selected. The Multi-Node Editor would be responsible to select all of the nodes in this sub-grid. The constraint being that this method will only select rectangular grids.	
-  	After nodes are selected, the Multi-Node Editor should give the user an opportunity to edit the properties (like color or on/off status) via the Single Node Editor.   	
-  	The Multi-Node Editor should also display a representation of the grid to the user via the GUI. See below for a mock-up of the selection of a 2x2 sub-grid within an 8x8 grid.
-	
-	%----------------------------------------------------------------------------------------
-	%	GRID EDITOR
-	%----------------------------------------------------------------------------------------
-	\subsubsection {Grid Editor}
-  	The Grid Editor is responsible for the creation, selection, and manipulation of grids. Since the goal of this program is to create visualizations with the nodes, it is paramount to allow the functionality to create and edit multiple grids. The grids work similar to a sprite animation; there is a collection of grids that will be cycled through in real-time with a slight delay. This can be used creatively to show animations.  	
-  	In regards to creation, the Grid Editor must take user input to create a new grid( perhaps a '+' button) and assign corresponding data and GUI representations of the new grid. The user must also be able to delete grids. This component creates the ability to select single or multiple grids in a similar fashion to the Multi-Node Editor.  	
-  	Additionally, the Grid Editor should allow the user to rearrange grids. This could take the form of dragging an individual grid to a different location within the grid array. Navigation of the various grids is necessary. The grid editor will implement this functionality, perhaps with a scroll bar (see figure below).	
+  ----------------------------------------------------------------------------------------
+ 	%	MULTI NODE EDITOR
+ 	%----------------------------------------------------------------------------------------
+ 	\subsubsection {Grid Editor}
+  The Grid Editor component is in charge of editing all the nodes within a grid. This component handles the selection of individual or multiple nodes. For example, the user may want to select a 5x5 sub-grid and change the color to green. The Multi-Node Editor is responsible for allowing the user to select up to and inclusive of the entire field. 
+  This selection should be done in a way that is familiar to the user. One possible action-sequence starts with the user selecting a node in a corner of the sub-grid. Then, while holding down shift, the user would select the node in a corner of the sub-grid diagonal to the first node selected. Grid Editor is responsible to select all of the nodes in this sub-grid. The constraint being that this method will only select rectangular grids.	
+ 	After nodes are selected, the Grid Editor should give the user an opportunity to edit the properties such as color or on/off status.   	
+ 	The Multi-Node Editor should also display a representation of the grid to the user via the GUI.
+  
+%	%----------------------------------------------------------------------------------------
+%	%	MULTI NODE EDITOR
+%	%----------------------------------------------------------------------------------------
+%	\subsubsection {Multi-Node Editor}
+%  	The Multi-Node Editor component is in charge of editing all the nodes within a grid. This component handles the selection of individual or multiple nodes. For example, the user may want to select a 20x20 sub-grid and change the color to green. The Multi-Node Editor is responsible for allowing the user to select up to 400 nodes. 
+%    This selection should be done in a way that is familiar to the user. One possible action-sequence starts with the user selecting a node in a corner of the sub-grid. Then, while holding down shift, the user would select the node in a corner of the sub-grid diagonal to the first node selected. The Multi-Node Editor would be responsible to select all of the nodes in this sub-grid. The constraint being that this method will only select rectangular grids.	
+%  	After nodes are selected, the Multi-Node Editor should give the user an opportunity to edit the properties (like color or on/off status) via the Single Node Editor.   	
+%  	The Multi-Node Editor should also display a representation of the grid to the user via the GUI. See below for a mock-up of the selection of a 2x2 sub-grid within an 8x8 grid.
+%	
+%	%----------------------------------------------------------------------------------------
+%	%	GRID EDITOR
+%	%----------------------------------------------------------------------------------------
+%	\subsubsection {Grid Editor}
+%  	The Grid Editor is responsible for the creation, selection, and manipulation of grids. Since the goal of this program is to create visualizations with the nodes, it is paramount to allow the functionality to create and edit multiple grids. The grids work similar to a sprite animation; there is a collection of grids that will be cycled through in real-time with a slight delay. This can be used creatively to show animations.  	
+%  	In regards to creation, the Grid Editor must take user input to create a new grid( perhaps a '+' button) and assign corresponding data and GUI representations of the new grid. The user must also be able to delete grids. This component creates the ability to select single or multiple grids in a similar fashion to the Multi-Node Editor.  	
+%  	Additionally, the Grid Editor should allow the user to rearrange grids. This could take the form of dragging an individual grid to a different location within the grid array. Navigation of the various grids is necessary. The grid editor will implement this functionality, perhaps with a scroll bar (see figure below).	
     
 
   
   
-  	\begin{figure}[ht!]
-  		\centering
-  		\includegraphics[width=80mm]{Grid.png}
-  		\caption{Grid Selection (green nodes are selected)}
-  	\end{figure}
-  	
-  	\begin{figure}[ht!]
-  		\centering
-  		\includegraphics[width=100mm]{Multi-grid.png}
-  		\caption{Multi-Node Grid Editor w/ Scroll Bar}
-  	\end{figure}    
+%  	\begin{figure}[ht!]
+%  		\centering
+%  		\includegraphics[width=80mm]{Grid.png}
+%  		\caption{Grid Selection (green nodes are selected)}
+%  	\end{figure}
+%  	
+%  	\begin{figure}[ht!]
+%  		\centering
+%  		\includegraphics[width=100mm]{Multi-grid.png}
+%  		\caption{Multi-Node Grid Editor w/ Scroll Bar}
+%  	\end{figure}    
   
-    \begin{figure}[ht!]
+    \begin{figure}[H]
       \centering
-      \includegraphics[width=150mm]{protoGrid.JPG}
-      \caption{Grid Selection (The prototype of the grid editor)}
+      \includegraphics[width=150mm]{protoGrid.PNG}
+      \caption{Grid Editor with color picker}
     \end{figure}
 	\clearpage	
 	
@@ -243,11 +253,12 @@
   			April 4  & File I/0 for GUI                    \Checkmark              \\
   			April 6  & Begin Development of Frame Editor   \Checkmark              \\
   			April 11 & End Sprint 2 and begin Sprint 3     \Checkmark              \\
-  			April 13 & Complete Frame Editor                             \\
-        April 16 & Complete Multi Node Editor                        \\
-  			April 18 & Extra time to catch up or add additional features \\
-  			April 20 & Goal Specifications for System Testing            \\
+  			April 13 & Refine Frame Editor                 \Checkmark              \\
+        April 16 & \sout{Complete Multi Node Editor }                  \\
+  			April 18 & Right-Click Menu in Scrub Bar       \Checkmark              \\
+  			April 20 & Refine Color Palate                 \Checkmark              \\
   			April 25 & System Testing                                    \\
+        April 27 & Progress Report Presentation                      \\
   			May 1    & Preparation for Final Presentation                \\
   			May 4    & GoofyLights Final Presentation                    \\  			
   		\end{tabular}  		
