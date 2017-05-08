@@ -15,7 +15,7 @@
 \newcounter{subsubsubsection}[subsubsection]
 \newcommand{\tline}{\hspace{-2.3pt}$\bullet$ \hspace{5pt}}
 \hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue}
-\setlength{\parindent}{15pt} % Indent paragraphs (automatically)
+\setlength{\parindent}{12pt} % Indent paragraphs (automatically)
 
 \makeatother
 \makeatletter
@@ -24,23 +24,23 @@
 \begin{document}
 	\begin{titlepage}
 		\centering	
-%		\vspace{.25cm}
     
     \begin{figure}[h]
       \centering
-      \includegraphics[width=0.45\linewidth]{glassesIcon.png}
+      \includegraphics[width=0.55\linewidth]{glassesIcon.png}
     \end{figure} 
   
   {\huge\bfseries Goofy Lights: \\ Design Specification\par}
+  		\vspace{.25cm}
     
-		{ \setstretch{0.1}		
-  		{\Large\itshape Adrian Beehner\par}
-  		{\Large\itshape Andrew Butler\par}
-  		{\Large\itshape Seth Forrest\par}
-  		{\Large\itshape Joseph Leister\par}
-  		{\Large\itshape Animesh Pattanayak\par}
-  		{\Large\itshape Megan Phelan\par}
-  		{\Large\itshape Robert Stewert\par}		
+		{ \setstretch{0.2}		
+      {\Large\itshape Animesh Pattanayak\\}	
+      {\Large\itshape Adrian Beehner\\}
+      {\Large\itshape Robert Stewert\\}	
+      {\Large\itshape Joseph Leister\\}
+      {\Large\itshape Andrew Butler\\}
+      {\Large\itshape Megan Phelan\\}
+      {\Large\itshape Seth Forrest\\}
 		}		
     \vspace{.25cm}	
     
@@ -67,9 +67,12 @@
 	
 	\section{Introduction}
 		\subsection{Project Summary}
-  		The University of Idaho Marching Band has recently begun an experimental project to equip members of the University marching band with light-up glasses. The task described in this document is part of a semester project for the CS 383: Software Engineering class at the University of Idaho.  The project is to design and implement a graphical user interface (GUI) for the light-up glasses, known colloquially as \textit{Goofy Glasses}. \\
-      This GUI, written in Java, grants a user the ability to manipulate the state of each pair of glasses to create elaborate designs and patterns. This piece of software should be intuitive enough to be usable by any individual with little or no training. The program allows a user to manipulate the color and state of a single node, multiple nodes, or bulk properties of all nodes. The workspace allows the layout of more nodes than is required by the marching band, to allow for additional pairs of Goofy Glasses to be added in the future. In addition, the user is able to specify workspace dimensions up to 20 x 20, allowing for different sized shows. \\
-      This document lives at \url{https://github.com/GoofyGlasses-CS383-S17/Design-Specification} \\
+  		The University of Idaho Marching Band has recently begun an experimental project to equip members of the University marching band with light-up glasses. The task described in this document is part of a semester project for the CS 383: Software Engineering class at the University of Idaho.  The project is to design and implement a graphical user interface (GUI) for the light-up glasses, known colloquially as \textit{Goofy Glasses}. 
+      \\
+      This GUI, written in Java, grants a user the ability to manipulate the state of each pair of glasses to create elaborate designs and patterns. This piece of software should be intuitive enough to be usable by any individual with little or no training. The program allows a user to manipulate the color and state of a single node, multiple nodes, or bulk properties of all nodes. The workspace allows the layout of more nodes than is required by the marching band, to allow for additional pairs of Goofy Glasses to be added in the future. In addition, the user is able to specify workspace dimensions up to 20 x 20, allowing for different sized shows. 
+      \\
+      This document lives at \url{https://github.com/GoofyGlasses-CS383-S17/Design-Specification} 
+      \\
       The code for the project can be found at \url{https://github.com/GoofyGlasses-CS383-S17/GridEditor}
 		
 		\subsection{Document Purpose}
@@ -100,7 +103,8 @@
 	\section{Program Overview/Scope}
   	This software was developed with scalability in mind. The goal was to create a Framework that can be updated and scaled easily, and to some degree, efficiently. Changes throughout the development cycle required adding the basic framework(the editor itself) and various functionalities, such as different ways to interact with the editor. \\
     This program has a GUI that allows manipulation of the color and state of each node, multiple nodes simultaneously, or bulk manipulation of the entire array. Grid dimensions and number of grids are variable, yet reside at a default value unless the user specifies. \\
-    It is assumed that no nodes in the grid are allowed to change places; all nodes must reside in their original location relative to other nodes. Another assumption is that the glasses themselves are already setup with a \textit{n}-node channel receiver, being able to receive and process a $3$-byte message, for RGB values.\\
+    It is assumed that no nodes in the grid are allowed to change places; all nodes must reside in their original location relative to other nodes. Another assumption is that the glasses themselves are already setup with a \textit{n}-node channel receiver, being able to receive and process a $3$-byte message, for RGB values.
+    \\
     The program is able to run on any Operating System with Java installed, with no changes in functionality. Each OS will utilize its own specific file system properties when loading and saving configurations.
 	
     \begin{figure}[ht!]
@@ -420,7 +424,7 @@
       %----------------------------------------------------------------------------------------
       %	APPENDIX B Content - Sample Code/Work Done
       %----------------------------------------------------------------------------------------
-      \subsection{Updated Section(s)}
+      \subsection{Updated Sections}
         The Single and Multi-Node grid editor sections were removed to reflect the change to using a single Grid Editor. These section(s) are further discussed below.
       
       %----------------------------------------------------------------------------------------
@@ -468,7 +472,7 @@
         %----------------------------------------------------------------------------------------
         %	APPENDIX B Content - Sample Code/Work Done
         %----------------------------------------------------------------------------------------
-        \subsection{Updated Section(s)}
+        \subsection{Updated Sections}
           A Large portion of this document was updated or rewritten in alignment with what is actually implemented in the Editor.
           
           %----------------------------------------------------------------------------------------
